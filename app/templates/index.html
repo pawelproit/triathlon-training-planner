@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% block title %}TriTrack – dziennik treningowy triathlonisty{% endblock %}
+
+{% block content %}
+<div class="text-center py-5">
+  <h1 class="display-5 fw-bold">Trenuj mądrzej. Pływanie, rower, bieg.</h1>
+  <p class="lead text-muted col-lg-7 mx-auto">
+    Zapisuj treningi, śledź postępy w kalendarzu i wygeneruj plan z trenerem AI.
+  </p>
+  <div class="d-flex gap-2 justify-content-center">
+    <a href="{{ url_for('auth.register') }}" class="btn btn-primary btn-lg">Załóż konto</a>
+    <a href="{{ url_for('auth.login') }}" class="btn btn-outline-secondary btn-lg">Zaloguj się</a>
+  </div>
+</div>
+{% endblock %}
