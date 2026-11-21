@@ -7,6 +7,8 @@ from .extensions import csrf, db, login_manager, migrate
 from .auth import bp as auth_bp
 from .main import bp as main_bp
 
+from .workouts import bp as workouts_bp
+
 
 def create_app(config_class=Config):
     app = Flask(__name__)
@@ -17,10 +19,11 @@ def create_app(config_class=Config):
     migrate.init_app(app, db)
     login_manager.init_app(app)
 
-    from . import models  # noqa: F401  (żeby migracje widziały modele)
+    from . import models  
     from .main import bp as main_bp
 
     app.register_blueprint(main_bp)
     app.register_blueprint(auth_bp, url_prefix="/auth")
+    app.register_blueprint(workouts_bp, url_prefix="/workouts")
 
     return app

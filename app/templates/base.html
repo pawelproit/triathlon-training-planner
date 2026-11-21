@@ -18,6 +18,7 @@
       <ul class="navbar-nav me-auto">
         {% if current_user.is_authenticated %}
         <li class="nav-item"><a class="nav-link" href="{{ url_for('main.dashboard') }}">Panel</a></li>
+        <li class="nav-item"><a class="nav-link" href="{{ url_for('workouts.index') }}">Treningi</a></li>
         {% endif %}
       </ul>
       <ul class="navbar-nav align-items-lg-center">
